@@ -22,6 +22,10 @@ class OpenJournalSystems():
 
         soup_metadata = self.__factory_soup(url)
         content = soup_metadata.find('div', id='content')
+
+        if not content:
+            return None
+
         table = content.find('table', class_='listing')
 
         if not table:

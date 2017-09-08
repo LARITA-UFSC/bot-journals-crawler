@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Text, create_engine, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, create_engine, ForeignKey, Boolean
 from sqlalchemy.orm import sessionmaker, relationship
 
 import json
@@ -21,6 +21,7 @@ class Documents(DeclarativeBase):
     url_view = Column('url_view', String, nullable=True)
     url_pdf = Column('url_pdf', String, nullable=True)
     journal = Column('journal', Integer)
+    trash = Column('trash', Boolean, default=True)
 
 
 class RawData(DeclarativeBase):
@@ -81,7 +82,8 @@ class DB():
         return item
 
     def __db_connect(self):
-        engine = create_engine('postgresql://joe:joe@localhost:5432/ci')
+
+        engine = create_engine('postgres://yhkwgjpzocdvxp:b8e01ffe882c4042df1adb673fec46de6880b94c32c869b34feb4c800c5f2c52@ec2-50-19-218-160.compute-1.amazonaws.com:5432/dfquvos8et8l34', pool_recycle=1200)
         return engine
 
     def __create_tables(self, engine):
