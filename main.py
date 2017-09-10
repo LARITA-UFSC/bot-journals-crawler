@@ -9,13 +9,19 @@ EM_QUESTAO = 5
 AGORA = 6
 INCID = 7
 INTEXTO = 8
-TENDENCIAS_DA_PESQUISA_BRASILEIRA_EM_CI = 9
 RBBD = 10
 BRAZILIAN_JOURNAL_OF_INFORMATION_SCIENCE = 11
 PONTO_DE_ACESSO = 12
 RIACI = 13
 RACB = 14
 BIBLIOS = 15
+CIENCIA_DA_INFORMACAO_EM_REVISTA = 16
+REVISTA_CONHECIMENTO_EM_ACAO = 17
+FOLHA_DE_ROSTO = 18 
+MULTIPLOS_OLHARES_EM_CIENCIAS_DA_INFORMACAO = 19
+REVISTA_ELETRONICA_DE_COMUNICACAO_INFORMACAO_INIVACAO_EM_SAUDE = 20
+TENDENCIAS_DA_PESQUISA_BRASILEIRA_EM_CI = 9
+
 # crawling('http://www.ies.ufpb.br/ojs2/index.php/ies/', [doc for doc in range(32999, 32999)], INFORMACAO_E_SOCIEDADE)
 # crawling('http://periodicos.puc-campinas.edu.br/seer/index.php/transinfo/', [doc for doc in range(2645, 3006)], TRANSINFORMACAO)
 # crawling('http://portaldeperiodicos.eci.ufmg.br/index.php/pci/',
@@ -29,11 +35,11 @@ BIBLIOS = 15
 # crawling('http://periodicos.unb.br/index.php/rici/', [doc for doc in range(1, 26269)], RIACI)
 # crawling('https://revista.acbsc.org.br/racb/', [doc for doc in range(1, 1385)], RACB)
 # crawling('https://www.seer.furg.br/biblos/', [doc for doc in range(1, 6993)], BIBLIOS)
+# crawling('http://www.seer.ufal.br/index.php/cir/', [doc for doc in range(1, 3334)], CIENCIA_DA_INFORMACAO_EM_REVISTA)
+# crawling('https://revistas.ufrj.br/index.php/rca/', [doc for doc in range(1, 152)], REVISTA_CONHECIMENTO_EM_ACAO)
+# crawling('http://periodicos.ufca.edu.br/ojs/index.php/folhaderosto/', [doc for doc in range(1, 194)], FOLHA_DE_ROSTO)
+# crawling('http://portaldeperiodicos.eci.ufmg.br/index.php/moci/', [doc for doc in range(1, 3207)], MULTIPLOS_OLHARES_EM_CIENCIAS_DA_INFORMACAO)
+# crawling('https://www.reciis.icict.fiocruz.br/index.php/reciis/', [doc for doc in range(1, 1029)], REVISTA_ELETRONICA_DE_COMUNICACAO_INFORMACAO_INIVACAO_EM_SAUDE)
 
-# Nao feitos
-# crawling('http://www2.marilia.unesp.br/revistas/index.php/bjis/', [doc for doc in range(1, 6687)], BRAZILIAN_JOURNAL_OF_INFORMATION_SCIENCE)
-# crawling('http://inseer.ibict.br/ancib/index.php/tpbci/', [doc for doc in range(1, 275)], TENDENCIAS_DA_PESQUISA_BRASILEIRA_EM_CI)
-# https://periodicos.ufsc.br/index.php/eb
-# http://revistas.ufpr.br/atoz 
-# https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/ 
-# crawling('https://www.revistas.usp.br/incid/', [doc for doc in range(1, 131346)], INCID) 
+
+# crawling('http://inseer.ibict.br/ancib/index.php/tpbci/', [doc for doc in range(2, 274)], TENDENCIAS_DA_PESQUISA_BRASILEIRA_EM_CI)

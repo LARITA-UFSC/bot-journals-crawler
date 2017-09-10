@@ -21,7 +21,7 @@ class Documents(DeclarativeBase):
     url_view = Column('url_view', String, nullable=True)
     url_pdf = Column('url_pdf', String, nullable=True)
     journal = Column('journal', Integer)
-    trash = Column('trash', Boolean, default=True)
+    trash = Column('trash', Boolean, default=False)
 
 
 class RawData(DeclarativeBase):

@@ -18,7 +18,10 @@ class OpenJournalSystems():
     def extract(self, url):
 
         def filter_field(id, description, pkp):
-            return [d['document'] for d in metadata_document if d['id'] in id and d['description'] in description and d['pkp'] in pkp]
+            mt = [d['document'] for d in metadata_document if d['id'] in id and d['description'] in description and d['pkp'] in pkp]
+            if len(mt) == 0:
+                return ['']
+            return mt
 
         soup_metadata = self.__factory_soup(url)
         content = soup_metadata.find('div', id='content')
@@ -39,7 +42,6 @@ class OpenJournalSystems():
         metadata_document = []
         for row in rows[1:]:
             elements = row.find_all('td')
-
             metadata = {
                 'id': elements[0].get_text().strip(),
                 'description': elements[1].get_text().strip(),
@@ -56,13 +58,13 @@ class OpenJournalSystems():
         summary = filter_field('4.', 'Descrição', 'Resumo')[0]
         url_view = filter_field('10.', 'Identificador',
                                 'Identificador de Recurso Uniforme (URI)')[0]
-
-        soup_url_pdf = self.__factory_soup(url_view)
-
         url_pdf = ''
-        div_pdf = soup_url_pdf.find('div', id='articleFullText')
-        if div_pdf:
-            url_pdf = div_pdf.a['href']
+        
+        if url_view != '':
+            soup_url_pdf = self.__factory_soup(url_view)
+            div_pdf = soup_url_pdf.find('div', id='articleFullText')
+            if div_pdf:
+                url_pdf = div_pdf.a['href']
 
         fields = {
             'title': title,
